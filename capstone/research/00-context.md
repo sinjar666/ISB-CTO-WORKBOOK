@@ -1,0 +1,51 @@
+- **Problem statement:** India’s electronics capability is constrained by slow, expensive, and fragmented learning across design, manufacturing, quality, compliance, and supply-chain coordination. The core research question is how newer technologies, especially generative AI and agentic AI, can compress the time required to build electronics capability end-to-end rather than only improving productivity at the margins.
+
+- **Research topic:** Why India depends on other countries for electronics hardware design and manufacturing, and how Generative AI / agentic AI changes the strategy.
+- **Core framing:** Electronics is a “system of systems” — dependence is not just about factories, but also chip design, chip fabrication, components, materials, tools, skilled engineers, logistics, capital, standards, patents, quality systems, and large-scale demand.
+- **Main causes of dependence to cover:**
+  - historical late start / path dependence
+  - high capital intensity and long payback periods
+  - semiconductor import dependence
+  - weak domestic component and supplier ecosystems
+  - lack of dense manufacturing clusters
+  - infrastructure and logistics constraints
+  - skill mismatch: strong software talent, weaker manufacturing/process depth
+  - low hardware R&D/productization intensity
+  - IP, standards, and licensing dependence
+  - reliance on foreign design tools and upstream technologies
+  - policy/regulatory inconsistency
+  - limited patient capital
+  - quality, yield, and reliability learning curve
+  - global concentration of key inputs and materials
+- **AI lens:** Generative AI and agentic AI do **not replace** physical industrial capability, but can **compress time/cost** and reduce coordination burden across the stack.
+- **AI use cases to investigate:**
+  - circuit/PCB/BOM/design-for-manufacturing copilots
+  - firmware generation and test assistance
+  - process optimization and yield improvement
+  - defect detection and predictive maintenance
+  - supplier discovery and local substitution intelligence
+  - compliance/standards/documentation automation
+  - engineering training and skill acceleration
+  - supply-chain orchestration via agents
+- **Strategic hypothesis:** India could build an **AI-accelerated electronics ecosystem** that learns, iterates, and localizes capability faster than traditional industrial development paths.
+- **Key question to answer:** What must India build, institutionally and technically, so AI can materially shorten the time to develop electronics capability, instead of simply improving current workflows?
+- **Areas where AI helps most:**
+  - reducing design iteration time
+  - improving factory quality/yield
+  - lowering coordination cost across fragmented suppliers
+  - helping smaller firms access expert-level engineering workflows
+- **Non-AI requirements that still matter:**
+  - electronics clusters
+  - semiconductor depth
+  - labs and certification infrastructure
+  - logistics and power reliability
+  - patient capital
+  - stable industrial policy
+  - trusted industrial data sharing
+- **Useful conclusion to test:** AI can become the “operating system” for India’s industrial development, but only if paired with physical manufacturing capacity and ecosystem building.
+- **Suggested output format for the research agent:** 
+  - root causes of dependence
+  - how AI changes each bottleneck
+  - what India must build
+  - sector-by-sector opportunities
+  - prioritized policy and industry roadmap
