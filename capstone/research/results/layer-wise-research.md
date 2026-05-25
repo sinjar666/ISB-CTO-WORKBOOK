@@ -552,3 +552,73 @@ The evidence in this research supports Option B.
 Generative and agentic AI can materially compress the time and cost of building electronics capability in India, but only in the layers where knowledge transfer, iteration speed, and coordination are the real bottlenecks. That includes design, verification, embedded software, packaging/test, reliability, component intelligence, compliance, and AI-native EMS operations. AI does not eliminate the need for physical capability. It changes the economics of learning.
 
 If India wants to become a pioneer in hardware R&D, it should not define success as merely attracting more assembly. It should define success as becoming the fastest-learning electronics ecosystem outside the incumbent strongholds, with AI embedded in the full loop from concept to field failure. The winning strategy is therefore selective depth, not broad imitation: build the control layer of hardware first, connect it to packaging/test and productization, and let AI turn India's existing engineering strengths into a compounding industrial advantage.
+
+## References
+This section lists all references consulted during the preparation of this write-up, including workspace documents, primary external sources, supporting pages reviewed during research, and source-discovery pages used to locate or validate material. Access date for the web sources below: 25 May 2026.
+
+### A. Workspace Documents Consulted
+1. `capstone/research/00-context.md`  
+   Used for the initial problem framing, dependence map, AI lens, and suggested output orientation.
+2. `capstone/research/results/01-research-plan.md`  
+   Used as the governing research plan for the five-layer structure, frameworks, and source priorities.
+3. `capstone/research/results/02-deep-research-brief.md`  
+   Used as prior baseline material and as a comparison point to broaden the analysis beyond China+1 and Apple assembly.
+4. `.claude/skills/deep-research/SKILL.md`  
+   Used as a methodology aid for research structure and synthesis; not used as a factual source for electronics or India-specific claims.
+
+### B. Primary External Sources Materially Used In The Synthesis
+1. India Semiconductor Mission, official website.  
+   https://ism.gov.in/  
+   Used for ISM mission description, scheme framing, milestone timeline, approved-project context, and the statement on fiscal support up to 50% for approved semiconductor fabs.
+2. Ministry of Electronics and Information Technology, Electronics Component Manufacturing Scheme.  
+   https://www.meity.gov.in/offerings/schemes-and-services/details/electronics-component-manufacturing-scheme-UTM1IjMtQWa  
+   Used for ECMS approval/notification timing and scheme objective to build a robust component ecosystem and integrate Indian companies with GVCs.
+3. Google Research, "Chip Design with Deep Reinforcement Learning."  
+   https://research.google/blog/chip-design-with-deep-reinforcement-learning/  
+   Used for the under-six-hour placement claim, comparison with expert-driven baselines, and the production-use note linked to next-generation TPUs.
+4. Instrumental, "Instrumental Taps AI and Accelerated Computing to Speed Server Production With NVIDIA."  
+   https://instrumental.com/resources/company/instrumental-taps-ai-and-accelerated-computing-to-speed-server-production-with-nvidia/  
+   Used for manufacturing-AI claims around up to 14 days faster final builds, synchronized visual AI, defect interception, first-pass-yield logic, traceability, and global learning across factories.
+5. Synopsys, "Volvo Cars' Digital Twin Advantage."  
+   https://www.synopsys.com/blogs/chip-design/volvo-cars-automotive-digital-twin.html  
+   Used for cloud-based electronics digital twins, testing before hardware exists, CI integration, and the claim that roughly 30% of code changes are rejected in early virtual testing.
+6. Advantest, "ACS Real-Time Data Infrastructure (ACS RTDI)."  
+   https://www.advantest.com/en/products/acs/rtdi/  
+   Used for real-time semiconductor test-data infrastructure, integrated workflow, millisecond feedback, and in-line production-decision framing.
+7. Synopsys, "Silicon.da."  
+   https://www.synopsys.com/ai/ai-powered-eda/silicon-da.html  
+   Used for claims about production analytics spanning design through manufacturing, silicon-data outlier detection, traceability, root-cause analysis, and optimization of quality, yield, throughput, power, and performance.
+8. Synopsys, "The Future of System Software Testing Is Agentic."  
+   https://www.synopsys.com/blogs/chip-design/the-future-of-system-software-testing-is-agentic.html  
+   Used for the distinction between agentic and autonomous testing, deterministic correctness gates, and human accountability in high-stakes system testing.
+
+### C. Supporting Pages Reviewed During Research
+1. Ministry of Electronics and Information Technology, PLI for electronics page.  
+   https://www.meity.gov.in/esdm/pli/  
+   Reviewed for policy context; usable page content extraction was limited during research.
+2. India Brand Equity Foundation, Electronics System Design and Manufacturing page.  
+   https://www.ibef.org/industry/electronics-system-design-manufacturing  
+   Reviewed as broad industry background; not relied on as a primary evidence source in the final synthesis.
+
+### D. Source-Discovery And Validation Pages Consulted
+These pages were used to locate official, technical, or company-published sources and to validate source availability. They were not treated as the primary evidence base for the substantive claims.
+
+1. DuckDuckGo search results for "India Semiconductor Mission approved projects official".  
+   https://duckduckgo.com/?q=India+Semiconductor+Mission+approved+projects+official&ia=web
+2. DuckDuckGo search results for "Google chip design reinforcement learning production blog".  
+   https://duckduckgo.com/?q=Google+chip+design+reinforcement+learning+production+blog&ia=web
+3. DuckDuckGo search results for "Instrumental NVIDIA server manufacturing AI case study".  
+   https://duckduckgo.com/?q=Instrumental+NVIDIA+server+manufacturing+AI+case+study&ia=web
+4. DuckDuckGo search results for "Volvo Cars virtual worlds real cars electronics digital twin".  
+   https://duckduckgo.com/?q=Volvo+Cars+virtual+worlds+real+cars+electronics+digital+twin&ia=web
+5. DuckDuckGo search results for "India electronics components manufacturing scheme official".  
+   https://duckduckgo.com/?q=India+electronics+components+manufacturing+scheme+official&ia=web
+6. DuckDuckGo search results for "Advantest ACS RTDI Synopsys Silicon.da".  
+   https://duckduckgo.com/?q=Advantest+ACS+RTDI+Synopsys+Silicon.da&ia=web
+7. DuckDuckGo search results for "Synopsys future of system software testing is agentic".  
+   https://duckduckgo.com/?q=Synopsys+future+of+system+software+testing+is+agentic&ia=web
+
+### E. Notes On Reference Usage
+1. The requested file `capstone/research/results/02-research-plan.md` was not present in the workspace and therefore was not used as a source.
+2. The primary analytical claims in the document were grounded in the workspace materials plus the primary external sources listed in sections A and B above.
+3. The discovery pages in section D were part of the research workflow and are included here for completeness because they were consulted during source gathering.
