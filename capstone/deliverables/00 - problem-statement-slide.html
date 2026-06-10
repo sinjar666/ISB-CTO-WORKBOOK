@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capstone Problem Statement</title>
+  <style>
+    :root {
+      --bg: #f4efe4;
+      --panel: rgba(255, 251, 244, 0.78);
+      --panel-strong: rgba(255, 250, 242, 0.92);
+      --ink: #14281d;
+      --muted: #516053;
+      --accent: #bd5d38;
+      --accent-soft: #f0d1c4;
+      --line: rgba(20, 40, 29, 0.12);
+      --shadow: 0 24px 60px rgba(31, 38, 32, 0.14);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(189, 93, 56, 0.18), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(38, 84, 57, 0.18), transparent 30%),
+        linear-gradient(135deg, #efe5d4 0%, #f7f4ed 48%, #ebe2d2 100%);
+      color: var(--ink);
+      font-family: "IBM Plex Sans", "Aptos", "Segoe UI", sans-serif;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 28px;
+    }
+
+    .slide {
+      position: relative;
+      width: min(1440px, 100%);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 32px;
+      background: linear-gradient(180deg, rgba(255, 252, 246, 0.96), rgba(248, 242, 232, 0.94));
+      box-shadow: var(--shadow);
+      padding: 24px 30px 18px;
+    }
+
+    .slide::before,
+    .slide::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(14px);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .slide::before {
+      width: 240px;
+      height: 240px;
+      right: -80px;
+      top: -90px;
+      background: rgba(189, 93, 56, 0.18);
+    }
+
+    .slide::after {
+      width: 280px;
+      height: 280px;
+      left: -110px;
+      bottom: -140px;
+      background: rgba(38, 84, 57, 0.16);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(20, 40, 29, 0.06);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(189, 93, 56, 0.15);
+    }
+
+    .grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 18px;
+      height: 100%;
+      margin-top: 10px;
+    }
+
+    .left,
+    .right {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    h1 {
+      margin: 8px 0 8px;
+      max-width: 11ch;
+      font-size: clamp(40px, 4.35vw, 60px);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+    }
+
+    .subhead {
+      margin: 0 0 14px;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.28;
+    }
+
+    .statement {
+      padding: 20px 22px;
+      border: 1px solid rgba(20, 40, 29, 0.08);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255, 252, 247, 0.96), rgba(247, 239, 227, 0.92));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
+
+    .statement h2,
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .statement p {
+      margin: 0;
+      font-size: clamp(18px, 1.8vw, 24px);
+      line-height: 1.24;
+      letter-spacing: -0.02em;
+    }
+
+    .emphasis {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .relevance {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .card {
+      padding: 13px 14px 15px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      min-height: 0;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.36;
+    }
+
+    .cite {
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-strong);
+    }
+
+    .quote {
+      padding: 18px 20px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(20, 40, 29, 0.94), rgba(38, 84, 57, 0.94));
+      color: #f7f2e8;
+      box-shadow: 0 14px 34px rgba(20, 40, 29, 0.22);
+    }
+
+    .quote p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.22;
+      letter-spacing: -0.03em;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 10px;
+      color: rgba(247, 242, 232, 0.78);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .basis-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .basis-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .basis-list li:first-child {
+      border-top: 0;
+      padding-top: 2px;
+    }
+
+    .tag {
+      min-width: 46px;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .basis-list strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+
+    .basis-list p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.34;
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 18px;
+      margin-top: auto;
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .footer strong {
+      color: var(--ink);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer p {
+      margin: 6px 0 0;
+    }
+
+    .hmw-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 12px;
+      padding: 22px;
+      border: 1px solid rgba(20, 40, 29, 0.08);
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(255, 252, 247, 0.98), rgba(247, 239, 227, 0.94));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
+
+    .hmw-label {
+      margin: 0;
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .hmw-text {
+      margin: 0;
+      font-size: clamp(23px, 2.15vw, 33px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .hmw-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.4;
+      max-width: 54ch;
+    }
+
+    .evidence-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .evidence-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .evidence-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .evidence-index {
+      min-width: 52px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .evidence-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+
+    .evidence-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.32;
+    }
+
+    .source-chip {
+      display: inline-block;
+      margin-top: 4px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .source-chip a,
+    .source-list a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(189, 93, 56, 0.25);
+    }
+
+    .source-chip a:hover,
+    .source-list a:hover {
+      border-bottom-color: rgba(189, 93, 56, 0.7);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .mini-card {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+    }
+
+    .mini-card h2,
+    .outcomes h2,
+    .sources h2 {
+      margin: 0 0 6px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mini-card p,
+    .outcomes p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.32;
+    }
+
+    .outcomes {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .outcome-block strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .outcome-block p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.24;
+    }
+
+    .sources {
+      margin-top: 6px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 10px;
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.28;
+    }
+
+    @media (max-width: 1180px) {
+      body {
+        padding: 18px;
+      }
+
+      .slide {
+        aspect-ratio: auto;
+        padding: 28px;
+      }
+
+      .grid,
+      .footer,
+      .relevance,
+      .mini-grid,
+      .outcome-grid,
+      .source-list {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #ffffff;
+      }
+
+      .slide {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="eyebrow">Capstone Problem Framing</div>
+
+    <div class="grid">
+      <section class="left">
+        <h1>Problem Statement</h1>
+
+        <div class="hmw-card">
+          <p class="hmw-label">How Might We</p>
+          <p class="hmw-text">How might India use generative and agentic AI to <span class="emphasis">accelerate electronics capability building</span> from design to field deployment?</p>
+        </div>
+
+        <div class="mini-grid">
+          <div class="mini-card">
+            <h2>Target State</h2>
+            <p>An India-based electronics ecosystem where design, packaging/test, manufacturing quality, compliance, and field feedback are connected into a faster domestic learning loop.</p>
+          </div>
+
+          <div class="mini-card">
+            <h2>Project Goal</h2>
+            <p>Identify where AI can most credibly reduce time-to-capability and what ecosystem enablers India must build alongside it.</p>
+          </div>
+        </div>
+
+        <div class="outcomes">
+          <h2>Expected Value Created</h2>
+          <div class="outcome-grid">
+            <div class="outcome-block">
+              <strong>Tangibles</strong>
+              <p>AI intervention map, ecosystem gap map, sector use-case shortlist, and a build roadmap for data, shared infrastructure, packaging/test, and reliability.</p>
+            </div>
+            <div class="outcome-block">
+              <strong>Intangibles</strong>
+              <p>Sharper strategic framing, better decisions on where India should play, and a clearer lens on control versus capacity in electronics.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right">
+        <div class="panel">
+          <h2>Why This Problem Is Relevant</h2>
+          <div class="evidence-grid">
+            <div class="evidence-item">
+              <span class="evidence-index">01</span>
+              <div>
+                <strong>The bottleneck is structural, not just capacity-driven</strong>
+                <p>India's policy stack itself highlights the missing middle of the ecosystem: semiconductors, components, packaging, and design depth, not just final assembly.</p>
+                <span class="source-chip"><a href="https://ism.gov.in/" target="_blank" rel="noreferrer">India Semiconductor Mission</a>; <a href="https://www.meity.gov.in/offerings/schemes-and-services/details/electronics-component-manufacturing-scheme-UTM1IjMtQWa" target="_blank" rel="noreferrer">MeitY ECMS</a></span>
+              </div>
+            </div>
+
+            <div class="evidence-item">
+              <span class="evidence-index">02</span>
+              <div>
+                <strong>The timing is unusually favorable right now</strong>
+                <p>China+1 diversification, Apple-supplier expansion, and newly approved semiconductor projects create a real window to convert manufacturing momentum into deeper capability.</p>
+                <span class="source-chip"><a href="https://www.reuters.com/technology/india-approves-27-bln-plan-three-semiconductor-plants-2024-02-29/" target="_blank" rel="noreferrer">Reuters</a>; <a href="https://www.bloomberg.com/news/articles/2023-10-27/tata-to-build-one-of-india-s-biggest-iphone-assembly-plants" target="_blank" rel="noreferrer">Bloomberg</a></span>
+              </div>
+            </div>
+
+            <div class="evidence-item">
+              <span class="evidence-index">03</span>
+              <div>
+                <strong>AI is relevant because it attacks the actual delay points</strong>
+                <p>Published cases already show AI compressing chip design, virtual validation, manufacturing traceability, and yield learning, which are precisely the bottlenecks this project targets.</p>
+                <span class="source-chip"><a href="https://research.google/blog/chip-design-with-deep-reinforcement-learning/" target="_blank" rel="noreferrer">Google Research</a>; <a href="https://www.synopsys.com/blogs/chip-design/volvo-cars-automotive-digital-twin.html" target="_blank" rel="noreferrer">Synopsys</a>; <a href="https://instrumental.com/resources/company/instrumental-taps-ai-and-accelerated-computing-to-speed-server-production-with-nvidia/" target="_blank" rel="noreferrer">Instrumental</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sources">
+            <h2>External Evidence Anchors</h2>
+            <div class="source-list">
+              <div><a href="https://ism.gov.in/" target="_blank" rel="noreferrer">India Semiconductor Mission</a></div>
+              <div><a href="https://www.meity.gov.in/offerings/schemes-and-services/details/electronics-component-manufacturing-scheme-UTM1IjMtQWa" target="_blank" rel="noreferrer">MeitY Electronics Component Manufacturing Scheme</a></div>
+              <div><a href="https://www.reuters.com/technology/india-approves-27-bln-plan-three-semiconductor-plants-2024-02-29/" target="_blank" rel="noreferrer">Reuters on India's approved semiconductor plants</a></div>
+              <div><a href="https://www.bloomberg.com/news/articles/2023-10-27/tata-to-build-one-of-india-s-biggest-iphone-assembly-plants" target="_blank" rel="noreferrer">Bloomberg on Tata and iPhone assembly expansion</a></div>
+              <div><a href="https://research.google/blog/chip-design-with-deep-reinforcement-learning/" target="_blank" rel="noreferrer">Google Research chip placement case</a></div>
+              <div><a href="https://www.synopsys.com/blogs/chip-design/volvo-cars-automotive-digital-twin.html" target="_blank" rel="noreferrer">Synopsys digital twin case</a> / <a href="https://www.synopsys.com/blogs/chip-design/the-future-of-system-software-testing-is-agentic.html" target="_blank" rel="noreferrer">agentic testing</a></div>
+              <div><a href="https://instrumental.com/resources/company/instrumental-taps-ai-and-accelerated-computing-to-speed-server-production-with-nvidia/" target="_blank" rel="noreferrer">Instrumental manufacturing AI case</a></div>
+              <div><a href="https://www.advantest.com/en/products/acs/rtdi/" target="_blank" rel="noreferrer">Advantest RTDI</a> / <a href="https://www.synopsys.com/ai/ai-powered-eda/silicon-da.html" target="_blank" rel="noreferrer">Synopsys Silicon.da</a></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

@@ -170,6 +170,20 @@ India is no longer starting from zero. But it is still early in the transition f
 ### 2.1 The Real Map: Electronics As A Learning System
 The electronics value chain is usually drawn linearly: design -> fab -> OSAT -> components -> EMS -> product. In practice it behaves more like a loop.
 
+```mermaid
+flowchart LR
+   A[Requirements] --> B[Architecture]
+   B --> C[Chips, boards, firmware, thermals, manufacturability]
+   C --> D[Manufacturing and test evidence]
+   D --> E[Field failures and service learning]
+   E --> A
+
+   F[Foreign-owned control points:<br/>EDA tools, foundries, suppliers,<br/>product owners, platform firms] -. can break or externalize learning .-> A
+   F -. can break or externalize learning .-> C
+   F -. can break or externalize learning .-> D
+   F -. can break or externalize learning .-> E
+```
+
 1. Requirements define architecture.
 2. Architecture defines chips, boards, firmware, thermals, and manufacturability constraints.
 3. Manufacturing and test generate the first real evidence about whether the design was robust.
@@ -526,6 +540,21 @@ India should measure success not only by output volume or export numbers, but by
 
 ### 2. Build Around A Design -> Test -> Reliability -> Field Loop
 The most practical national wedge is to connect:
+
+```mermaid
+flowchart LR
+   A[Chip and system design] --> B[Virtual validation]
+   B --> C[Packaging and test analytics]
+   C --> D[EMS and NPI quality]
+   D --> E[Field-return intelligence]
+   E --> A
+
+   F[Compounding knowledge] -. improves .-> A
+   F -. improves .-> B
+   F -. improves .-> C
+   F -. improves .-> D
+   F -. improves .-> E
+```
 
 - chip and system design,
 - virtual validation,
