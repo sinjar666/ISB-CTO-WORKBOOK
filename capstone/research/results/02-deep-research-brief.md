@@ -32,13 +32,13 @@ The primary driver of the recent surge in India's electronics manufacturing is A
 The "China Plus One" strategy, a move by global firms to diversify supply chains away from China, is providing a powerful tailwind. Apple, for instance, is projected to produce iPhones worth over $12 billion in India in 2024, a massive jump from previous years. This shift is driven by its key suppliers:
 - **Foxconn:** Investing over $1.5 billion to expand its operations in Tamil Nadu.
 - **Pegatron:** Planning a second major facility in Chennai.
-- **Wistron:** Its former plant, now owned by **Tata Electronics**, is set to increase capacity by 500% in two years, marking the rise of a domestic Indian electronics champion. **Source:** [Bloomberg, Oct 2023](https://www.bloomberg.com/news/articles/2023-10-27/tata-to-build-one-of-india-s-biggest-iphone-assembly-plants)
+- **Wistron:** Its former plant, now owned by **Tata Electronics**, is set to increase capacity by 500% in two years, marking the rise of a domestic Indian electronics champion. **Source:** [Nikkei Asia, Oct 2023](https://asia.nikkei.com/Business/Technology/Tata-to-make-iPhones-in-India-with-deal-for-Wistron-business)
 
 Furthermore, India has approved a $2.7 billion plan for three new semiconductor plants:
 1.  **Tata Electronics & Powerchip (Taiwan):** A major fab in Dholera, Gujarat, with a capacity of 50,000 wafers per month.
 2.  **Tata Semiconductor Assembly and Test (TSAT):** A facility in Jagiroad, Assam.
 3.  **CG Power & Renesas (Japan):** A semiconductor assembly and testing facility in Sanand, Gujarat.
-**Source:** [Reuters, Feb 2024](https://www.reuters.com/technology/india-approves-27-bln-plan-three-semiconductor-plants-2024-02-29/)
+**Source:** [PIB (Govt. of India), Feb 2024](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2012209)
 
 ## How AI Changes the Game: The Depth Dive
 
